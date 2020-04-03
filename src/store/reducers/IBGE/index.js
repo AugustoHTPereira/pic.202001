@@ -919,7 +919,7 @@ const INITIAL_STATE = {
 export default function IBGE(state = INITIAL_STATE, action) {
   switch (action.type) {
     case "SELECT_IBGE":
-      return { list: action.list };
+      return { list: [...action.list] };
 
     default:
       return state;
