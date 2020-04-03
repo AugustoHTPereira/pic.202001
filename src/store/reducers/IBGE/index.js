@@ -858,11 +858,23 @@ const INITIAL_STATE = {
 };
 
 export default function IBGE(state = INITIAL_STATE, action) {
+  console.log("ACTION:", action, state);
+
+  var newstate = null;
+
   switch (action.type) {
     case "SET_IBGE":
-      return { ...state, selected: action.selected };
+      newstate = {
+        ...state,
+        [state.selected]: action.selected
+      };
+      break;
 
     default:
-      return { state };
+      newstate = { state };
+      break;
   }
+
+  console.log("newstate", newstate);
+  return newstate;
 }

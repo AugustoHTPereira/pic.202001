@@ -1,28 +1,20 @@
 import React from "react";
-import { connect } from "react-redux";
-import * as IBGEActions from "../../store/actions/IBGE";
-import { bindActionCreators } from "redux";
 import Header from "../../components/Header";
+
+import IBGE from "../../components/Home/IBGE";
 
 const Home = ({ list, selected, selectIBGE }) => {
   return (
     <div>
+
       <Header />
 
-      <h1>Home</h1>
+      <h1>Código IBGE - Minas Gerais</h1>
+      <h3>Selecione as cidades a serem analizadas</h3>
 
-      {JSON.stringify(selected)}
-      {JSON.stringify(list)}
+      <IBGE />
     </div>
   );
 };
 
-const mapStateToProps = state => ({
-  list: state.IBGE.state.list,
-  selected: state.IBGE.state.selected
-});
-
-const mapDispatchToProps = dispatch =>
-  bindActionCreators(IBGEActions, dispatch);
-
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default Home;
