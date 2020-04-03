@@ -1,13 +1,28 @@
-import React from 'react';
+import React from "react";
+import { connect } from "react-redux";
+import * as IBGEActions from "../../store/actions/IBGE";
+import { bindActionCreators } from "redux";
+import Header from "../../components/Header";
 
-// import { Container } from './styles';
+const Home = ({ list, selected, selectIBGE }) => {
+  return (
+    <div>
+      <Header />
 
-const Home = () => (
+      <h1>Home</h1>
 
-  <div>
-    <h1>Home</h1>
-  </div>
+      {JSON.stringify(selected)}
+      {JSON.stringify(list)}
+    </div>
+  );
+};
 
-);
+const mapStateToProps = state => ({
+  list: state.IBGE.state.list,
+  selected: state.IBGE.state.selected
+});
 
-export default Home;
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(IBGEActions, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

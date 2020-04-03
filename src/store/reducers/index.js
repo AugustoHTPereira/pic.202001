@@ -1,1 +1,6 @@
-export const reducers = null;
+import { combineReducers } from "redux";
+import IBGE from "./IBGE";
+
+export default combineReducers({
+  IBGE
+});
