@@ -1,0 +1,22 @@
+.ContentFoundedData {
+  width: 100%;
+  max-width: 220px;
+  overflow: hidden;
+}
+
+.ContentFoundedData ul {
+  list-style-type: none;
+}
+
+.ContentFoundedData ul li {
+  color: gray;
+  font-size: 9px;
+}
+
+.ContentFoundedData ul li {
+  margin-right: 5px;
+}
+
+.ContentFoundedData ul li:first-child {
+  margin: 0;
+}
