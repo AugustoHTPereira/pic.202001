@@ -6,29 +6,20 @@ import { bindActionCreators } from "redux";
 import "./style.css";
 
 const Home = ({ list, selectIBGE }) => {
-  const handleSelectIBGE = (list, item) => {
-    console.log(list);
-
-    for (let i = 0; i < list.length; i++)
-      if (list[i].codigo === item.codigo)
-        list[i].selecionado = !list[i].selecionado;
-
-    selectIBGE(list);
-  };
 
   return (
     <div className="content-ibge">
       <ul>
-        {list.map(item => (
+        {list.map((item, index) => (
           <li
             onClick={() => {
-              handleSelectIBGE(list, item);
+              selectIBGE(index);
             }}
-            className={item.selecionado ? "selected" : null}
+            className={item.checked ? "selected" : null}
             title="Clique para selecionar"
-            key={item.codigo}
+            key={item.id}
           >
-            {item.codigo} - {item.cidade} - {item.selecionado ? "selecionado" : "desselecionado"}
+            {index} - {item.city}
           </li>
         ))}
       </ul>

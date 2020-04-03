@@ -1,0 +1,31 @@
+.ContentSelectedCities {
+
+}
+
+.ContentSelectedCities ul {
+  display: grid;
+  list-style-type: none;
+  grid-template-columns: 1fr 1fr;
+  flex-wrap: wrap;
+  margin: 15px 0 0;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.ContentSelectedCities ul li {
+  margin: 2px 7px;
+  background-color: royalblue;
+  border-radius: 4px;
+  padding: 2px 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 1200) {
+  .ContentSelectedCities ul {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}

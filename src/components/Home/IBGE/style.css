@@ -2,7 +2,11 @@
   width: 100%;
   max-width: 600px;
   background-color: #333;
-  margin: 0 auto;
+  margin: 0 auto 35px;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 5px 22px rgba(0, 0, 0, 0.25);
+  animation: focusShadow 1.5s infinite ease-in-out;
 }
 
 .content-ibge ul {
@@ -16,14 +20,40 @@
   transition: 250ms;
 }
 
-.content-ibge ul li.selected {
-  background-color: royalblue !important;
-}
-
 .content-ibge ul li:nth-child(2n+1) {
   background-color: #33353b;
 }
 
-.content-ibge ul li:hover {
+.content-ibge ul li.selected {
   background-color: royalblue;
+  animation: select 300ms ease-in-out;
+}
+
+.content-ibge ul li:hover {
+  background-color: rgb(50, 86, 196);
+}
+
+
+@keyframes select {
+  from {
+    background-color: rgb(86, 120, 224);
+  }
+
+  to {
+    background-color: royalblue;
+  }
+}
+
+@keyframes focusShadow {
+  0% {
+    box-shadow: 0 5px 22px rgba(0, 0, 0, 0.25);
+  }
+
+  65% {
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.25);
+  }
+
+  100% {
+    box-shadow: 0 5px 22px rgba(0, 0, 0, 0.25);
+  }
 }

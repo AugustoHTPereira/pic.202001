@@ -1,7 +1,7 @@
-export const selectIBGE = list => {
+export const selectIBGE = index => {
 
   return {
     type: "SELECT_IBGE",
-    list: list
+    index: index
   };
 };

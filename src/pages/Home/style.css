@@ -1,0 +1,32 @@
+.content-home .PageTitle {
+  width: 100%;
+  max-width: 600px;
+  margin: 100px auto 25px;
+}
+
+.content-home .PageTitle span {
+  color: rgb(201, 225, 65);
+  font-size: 10px;
+  display: block;
+}
+
+.content-home .SelectedIBGE {
+  position: fixed;
+  top: 100px;
+  width: 100%;
+  max-width: 300px;
+  right: 30px;
+  border-radius: 4px;
+  overflow: hidden;
+  padding: 15px 25px;
+  background-color: #434343;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1320px) {
+  .content-home .SelectedIBGE {
+    position: initial;
+    margin: 15px auto;
+    max-width: 600px;
+  }
+}
