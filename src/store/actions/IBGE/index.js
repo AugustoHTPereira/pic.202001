@@ -1,8 +1,7 @@
-export const selectIBGE = selected => {
-  console.log("ACTIVED ACTION", selected);
+export const selectIBGE = list => {
 
   return {
-    type: "SET_IBGE",
-    selected
+    type: "SELECT_IBGE",
+    list: list
   };
 };

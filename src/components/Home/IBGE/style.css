@@ -16,6 +16,10 @@
   transition: 250ms;
 }
 
+.content-ibge ul li.selected {
+  background-color: royalblue !important;
+}
+
 .content-ibge ul li:nth-child(2n+1) {
   background-color: #33353b;
 }

@@ -6,11 +6,12 @@ import IBGE from "../../components/Home/IBGE";
 const Home = ({ list, selected, selectIBGE }) => {
   return (
     <div>
-
       <Header />
 
-      <h1>Código IBGE - Minas Gerais</h1>
-      <h3>Selecione as cidades a serem analizadas</h3>
+      <div>
+        <h1>Seleção de cidades</h1>
+        <p>Parametrize as cidades desejadas</p>
+      </div>
 
       <IBGE />
     </div>

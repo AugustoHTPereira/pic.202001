@@ -5,19 +5,30 @@ import { bindActionCreators } from "redux";
 
 import "./style.css";
 
-const Home = ({ list, selected, selectIBGE }) => {
+const Home = ({ list, selectIBGE }) => {
+  const handleSelectIBGE = (list, item) => {
+    console.log(list);
+
+    for (let i = 0; i < list.length; i++)
+      if (list[i].codigo === item.codigo)
+        list[i].selecionado = !list[i].selecionado;
+
+    selectIBGE(list);
+  };
+
   return (
     <div className="content-ibge">
-      <h1>{selected}</h1>
-
       <ul>
         {list.map(item => (
           <li
-            onClick={() => selectIBGE([...selected, item])}
+            onClick={() => {
+              handleSelectIBGE(list, item);
+            }}
+            className={item.selecionado ? "selected" : null}
             title="Clique para selecionar"
             key={item.codigo}
           >
-            {item.cidade}
+            {item.codigo} - {item.cidade} - {item.selecionado ? "selecionado" : "desselecionado"}
           </li>
         ))}
       </ul>
@@ -26,8 +37,7 @@ const Home = ({ list, selected, selectIBGE }) => {
 };
 
 const mapStateToProps = state => ({
-  list: state.IBGE.state.list,
-  selected: state.IBGE.state.selected
+  list: state.IBGE.list
 });
 
 const mapDispatchToProps = dispatch =>
